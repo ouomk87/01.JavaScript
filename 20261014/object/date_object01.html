@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현재시간</title>
+  </head>
+  <body>
+    <p>
+      현재 시각 :
+      <strong class="display">
+        <!-- js출력 -->
+      </strong>
+    </p>
+
+    <script>
+      //현재 시간을 나타내는 함수 ->function 단독으로 쓸때는 function에 ()메서드 앞에 이름을 지정해야함 안하면 에러남
+      function displayNow() {
+        //console.log("확인");
+        let now = new Date();
+        // console.log(now);
+        const currentTime = now.toLocaleTimeString();
+        console.log(currentTime); //오전 10:52:28
+        const display = document.querySelector(".display");
+        // console.log(display);
+        display.innerHTML = `${currentTime}`;
+      }
+      //여기까지는 기능을 설정한거고 호출을 꼭 해줘야함
+      //함수 호출기능 : 한번은 호출해줘야함
+      //displayNow();
+      //setInterval(); :일정시간 간격으로 반복 실행하는 함수
+      setInterval(displayNow, 1000); //1000이 1초
+    </script>
+  </body>
+</html>

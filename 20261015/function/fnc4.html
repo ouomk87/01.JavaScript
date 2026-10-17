@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="skyBtn" onclick="changcolor('skyblue')">하늘색</button>
+    <!-- "" 안에 "" 또 넣으면 오류 뜸 '' 로 씀  -->
+    <button id="pink" onclick="changcolor('pink')">핑크색</button>
+    <button id="yellow" onclick="changcolor('yellow')">노란색</button>
+    <button id="blue" onclick="changcolor('blue')">파란색</button>
+    <script>
+      //색변경 함수
+      function changcolor(color) {
+        document.body.style.backgroundColor = color;
+        console.log(color);
+      }
+      //fnc3.html 내용이 너무 길다면 onclick 으로 넣어도 됨
+    </script>
+  </body>
+</html>

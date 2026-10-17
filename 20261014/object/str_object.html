@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String 객체</title>
+  </head>
+  <body>
+    <script>
+      //1.length 속성
+      const str = "Hello, Javascript";
+      console.log(str.length); //길이
+
+      //2.toUpperCase()toLowerCase()메서드
+      console.log(str.toLocaleLowerCase());
+      console.log(str.toLocaleUpperCase());
+
+      //3.includes() 해당내용이 있는지 확인 메서드
+      const email = "user@example.com";
+      console.log(email.includes("@")); //@가 있는지 없는지 확인해라~ 있으면 true표시
+
+      //4.trim() 공백제거 메서드
+      const input = " he llo ";
+      console.log(input.length);
+      console.log(input.trim().length); // trim 공백을 없애고 length 갯수를 보여줌(뒤에 공백은 제외함)
+
+      //5.slice() : 시작인덱스(포함), 끝인덱스(미포함, 바로 앞까지만 자름)
+      const str2 = "Javascript";
+      console.log(str2.slice(4, 10)); //0부터 J~S까지 S포함 ->Java(0~4)빼고 나타남
+
+      //6.replace() : 문자교체
+      const sentence = "I Like Java";
+      console.log(sentence.replace("Java", "JavaScript"));
+
+      //7.split() : 문자분리
+      const data = "apple, banana, orange"
+      console.log(data.split(""));
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .submenu.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu">메뉴 1</button>
+    <ul class="submenu">
+      <li>서브 메뉴1</li>
+      <li>서브 메뉴2</li>
+    </ul>
+    <script>
+      const menu = document.querySelector(".menu");
+      const submenu = document.querySelector(".submenu");
+      menu.addEventListener("click", function () {
+        //submenu.classList.toggle("active");
+        //active 이름자체는 중요하지않다 class명이 바뀌면 바뀐걸 넣으면 된다.
+        if (submenu.classList.contains("active")) {
+          submenu.classList.remove("active");
+        } else {
+          submenu.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

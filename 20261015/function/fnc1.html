@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button style="color: red; background-color: bisque" onclick="sayHi()">
+      클릭</button
+    ><br />
+    <button onclick="alert()">알림창 클릭</button><br />
+    <!-- alert() 은 내장 함수라 스크립트에 따로 호출 코드 적을 필요 없음 -->
+    <script>
+      function sayHi() {
+        console.log("안녕");
+      }
+      function greet(username, age, gu) {
+        console.log("확인");
+
+        document.write(
+          `${username}님 나이는 ${age}사는 동은 ${gu} 환영합니다.<br>`,
+        );
+      }
+      greet("이미경", 20, "동구");
+      greet("홍길동", 30, "수성구");
+      greet("김그린", 40, "중구");
+      // greet("인수 값")
+      // 이름을 한번더 불러서 호출해야함 greet();을 안쓰면 콘솔에 안나옴
+      // greet()을 불러오면서 ()안에 값을 불러옴
+    </script>
+  </body>
+</html>

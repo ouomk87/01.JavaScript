@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math 객체</title>
+  </head>
+  <body>
+    <script>
+      let unm = 2.223;
+      let maxNum = Math.max(10, 5, 8, 30);
+      //console.log(maxNum);
+      let minNum = Math.min(10, 5, 8, 30);
+      //console.log(minNum);
+
+      //round() :  소수점 첫째 자리에서 반올림해라~
+      let roundNum = Math.round(unm);
+      console.log(roundNum);
+
+      //floor() : 소수점을 버리고 내림(정수로 변환)
+      let floorNum = Math.floor(unm);
+      console.log(floorNum);
+
+      //ceil() : 소수점을 올림하여 정수 변환
+      let ceilNum = Math.ceil(unm);
+      console.log(ceilNum); // 2.223 => 3
+
+      //random() : 0이상 1사이의 난수 (예 : 0.8214) 0,1포함 안함
+      let randomNum = Math.random();
+      console.log(randomNum);
+
+      //PI(원주율 값을 반환)
+      let piNum = Math.PI;
+      console.log(piNum);
+    </script>
+  </body>
+</html>

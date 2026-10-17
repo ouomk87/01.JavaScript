@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach()</title>
+  </head>
+  <body>
+    <script>
+      //하나하나 각각 출력하고 싶을때 사용
+      const fruits = ["사과", "바나나", "포도", "망고", "수박"];
+      console.log(fruits);
+      //   fruits.forEach(function(fruits, index){
+
+      //   })
+      fruits.forEach((fruits, index) => {
+        console.log(fruits);
+        console.log(index);
+        document.write(`<p>${index + 1} : ${fruits}</p>`); //숫자가 0부터 시작안하고 싶으면 + 1 추가해주면됨
+      }); // 두가지 방법 다 사용가능
+    </script>
+  </body>
+</html>

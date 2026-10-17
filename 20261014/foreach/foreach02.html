@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruitList">
+      <!-- js 출력 -->
+      <!--
+       <li>1.사과</li>
+       <li>2.바나나</li>
+       <li>3.포도</li>
+       <li>4.망고</li>
+       <li>5.수박</li>
+        -->
+    </ul>
+    <script>
+      //더미데이터
+      const list = document.querySelector("#fruitList");
+      const fruits = ["사과", "바나나", "포도", "망고", "수박", "망고", "수박"];
+      console.log(fruits);
+      fruits.forEach((item, index) => {
+        console.log(item, index);
+        list.innerHTML += `<li>${index + 1}.${item}</li>`; //더하고 더함 갯수만큼  = 앞에 +를 넣어주면됨 +=
+      });
+    </script>
+  </body>
+</html>

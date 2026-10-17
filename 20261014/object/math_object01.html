@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 변경</title>
+  </head>
+  <body>
+    <button class="btn">색변경</button>
+
+    <script>
+      const btn = document.querySelector(".btn");
+      // console.log(btn);
+      btn.addEventListener("click", function () {
+        //console.log("click");
+        // rgb(255,255,255) rgb(0,0,0)
+        const rC = Math.floor(Math.random() * 256); //소수점 다빼고 출력됐으면 할때
+        // console.log(rC);
+        const gC = Math.floor(Math.random() * 256);
+        //console.log(gC);
+        const bC = Math.floor(Math.random() * 256);
+        //console.log(bC);
+        const bgColor = `rgb(${rC}, ${gC}, ${bC})`;
+        console.log(bgColor);
+        document.body.style.backgroundColor = bgColor;
+      });
+      // function (){} 대신 쓰는 ()=>{} 화살표 함수
+    </script>
+  </body>
+</html>

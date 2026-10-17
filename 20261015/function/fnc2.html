@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="colorBtn">색 바꾸기</button>
+    <script>
+      //색변경 함수
+      function changcolor() {
+        document.body.style.backgroundColor = "skyblue";
+      }
+      //   changcolor(); // 조건이 없으면 바로 함수 실행함
+      const colorBtn = document.querySelector("#colorBtn");
+      colorBtn.addEventListener("click", changcolor);
+      // 바로 위에 ("click", changcolor) => changcolor 대신 위에 선언한 function changcolor(){}내용을
+      // 그대로 거기에 넣어됨(그대신 재사용 안됨 이름있는 친구들은 다른 이름을 넣어 재사용 가능함
+      // 예)changcolor이름을 다른 이름으로 변경해서 재사용 가능함)
+      // 다른 이름으로 밑에 const내용이 동일하게 적용됨
+      // document.querySelector("#colorBtn").addEventListener("");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .box.active {
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--1.이벤트 연결-->
+    <button id="btn">눌러보세요</button>
+    <!--2.입력이벤트-->
+    <input type="text" id="inputName" placeholder="이름을 입력하세요" />
+    <!-- 3.form제출이벤트 -->
+    <form action="" id="myForm">
+      <input id="userEmail" type="text" placeholder="이메일을 입력하세요" />
+      <button type="submit">제출</button>
+    </form>
+    <!-- 4.마우스 이벤트 -->
+    <div class="box"></div>
+    <!-- 5.키보드 이벤트 -->
+    <input type="text" id="keyInput" placeholder="아무 키나 눌러보세요" />
+    <script>
+      // 1. 이벤트 연결
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        console.log("click");
+        btn.style.color = "red";
+      });
+      //2.입력 이벤트
+      const userName = document.querySelector("#inputName");
+      console.log(userName);
+      userName.addEventListener("input", () => {
+        console.log(userName.value);
+      });
+      //input을 클릭하는게 아니고 입력한 것을 확인하는것임
+
+      //3.form 제출 이벤트
+      const form = document.querySelector("#myForm");
+      const userEmail = document.querySelector("#userEmail");
+      form.addEventListener("submit", (event) => {
+        console.log(event);
+        event.preventDefault(); //새로고침(번쩍임) event이벤트를 막아줌
+        //preventDefault 원래 행동을 맏아주는 메서드
+        //preventDefault 혼자는 못씀 event랑 같이 써야함
+        //event.preventDefault();을 안 넣으면 자꾸 새로고침 되서 console.log("폼이 제출되었습니다.");가 출력이 안됨
+
+        console.log("폼이 제출되었습니다.");
+        console.log(userEmail.value);
+        document.write(`${userEmail.value}`);
+      });
+      //4.마우스 이벤트
+      const box = document.querySelector(".box");
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "orange";
+      });
+      box.addEventListener("mouseout", () => {
+        box.style.backgroundColor = "aquamarine";
+      });
+      //5.키보드 이벤트
+      const keyInput = document.querySelector("#keyInput");
+      keyInput.addEventListener("keydown", (e) => {
+        //event -> e 로 적어도됨
+        //keydown 은 커서를 올리고 엔터나 시프트나 뭔가를 쳤을때를 말하는것임
+        console.log(event.key);
+        console.log(event.keyCode);
+      });
+      //6.페이지 로드 이벤트
+      window.addEventListener("load", () => {
+        console.log("페이지 로딩 완료");
+      });
+      //7.화면 리사이즈 이벤트
+      window.addEventListener("resize", () => {
+        //화면의 사이즈가 600픽셀보다 작으면
+        if (window.innerWidth < 600) {
+          box.classList.add("active");
+        } else {
+          box.classList.remove("active");
+        }
+      });
+      //console.log(window.innerWidth);//화면 너비를 확인 할수 있음
+      //console.log(window.innerHeight); //화면 높이를 확인 할수 있음
+    </script>
+  </body>
+</html>

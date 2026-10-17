@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="skyBtn">하늘색</button>
+    <button id="pink">핑크색</button>
+    <button id="yellow">노란색</button>
+    <button id="blue">파란색</button>
+    <script>
+      const skyBtn = document.querySelector("#skyBtn");
+      const pinkBtn = document.querySelector("#pink");
+      const yellow = document.querySelector("#yellow");
+      const blue = document.querySelector("#blue");
+
+      //색변경 함수
+      function changcolor(color) {
+        document.body.style.backgroundColor = color;
+      }
+      skyBtn.addEventListener("click", function () {
+        changcolor("skyblue");
+      });
+      pinkBtn.addEventListener("click", function () {
+        changcolor("pink");
+      });
+      yellow.addEventListener("click", function () {
+        changcolor("yellow");
+      });
+      blue.addEventListener("click", function () {
+        changcolor("blue");
+      });
+    </script>
+  </body>
+</html>
