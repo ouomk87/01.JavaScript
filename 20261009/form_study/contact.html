@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기</title>
+    <link rel="stylesheet" href="css/contact02.css">
+</head>
+<body>
+    <!--문의하기 영역-->
+    <form class="contact-form">
+        <!--제목-->
+        <h2>문의하기</h2>
+        <!--이름-->
+        <label for="name">이름</label>
+        <input type="text" id="name" placeholder="이름을 입력하세요">
+        <!--이메일-->
+        <label for="email">이메일</label>
+        <input type="email" id="email" placeholder="이메일을 입력하세요">
+        <!--문의유형-->
+        <label for="category">문의 유형</label>
+        <select id="category">
+            <option>문의 유형을 선택해주세요</option>
+            <option>상품 문의</option>
+            <option>배송 문의</option>
+            <option>환불 문의</option>
+            <option>기타 문의</option>
+        </select>
+        <!--문의내용-->
+        <label for="message">문의 내용</label>
+        <textarea id="message" placeholder="문의 내용을 입력해주세요."></textarea>
+        <!--제출 버튼-->
+        <button type="submit">문의하기</button>
+
+
+
+    </form>
+    
+</body>
+</html>
