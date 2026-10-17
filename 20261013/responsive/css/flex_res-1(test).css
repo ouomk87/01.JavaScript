@@ -1,0 +1,77 @@
+@import url("reset.css");
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  min-width: 290px;
+  background-color: rgb(255, 223, 223);
+  padding: 3%;
+  margin: auto;
+}
+
+.card li {
+  display: flex;
+  gap: 2%;
+  margin-bottom: 2%;
+  align-items: center;
+  background-color: rgb(252, 246, 247);
+  overflow: hidden;
+}
+.card li:last-child {
+  margin-bottom: 0;
+}
+.card li button {
+  background-color: #292929;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 12px 5px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+/*이미지 영역*/
+.img-box,
+.card-txt {
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card-txt h3 {
+    font-size: 16px;
+  }
+  .card-txt p {
+    font-size: 14px;
+  }
+
+  .card li {
+    border-radius: 20px;
+    margin-bottom: 3%;
+  }
+
+  .card li button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    background-color: aquamarine;
+  }
+
+  .card li {
+    flex-direction: column;
+  }
+  .img-box,
+  .card-txt {
+    width: 100%;
+  }
+  .card-txt {
+    padding: 6%;
+    text-align: left;
+  }
+
+  .card li button {
+    font-size: 0.6rem;
+  }
+}

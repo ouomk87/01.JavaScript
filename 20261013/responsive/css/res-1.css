@@ -1,0 +1,44 @@
+@import url("reset.css");
+body {
+  background: aqua;
+}
+html {
+  font-size: 10px;
+}
+.box {
+  width: 90%;
+  max-width: 500px;
+  min-width: 250px;
+  margin: auto;
+}
+h1 {
+  display: none;
+  /* font-size: 8vw; */
+  /* 모바일일때는 vw말고 따로 지정:너무작아져버림 */
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  h1 {
+    display: block;
+    font-size: 8px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 390px) {
+  .box {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

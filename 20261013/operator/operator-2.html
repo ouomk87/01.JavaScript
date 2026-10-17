@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <button id="btn">클릭 +</button>
+    <p class="counter">클릭횟수 : 0</p>
+    <script>
+        let clickBtn = document.querySelector("#btn") 
+        //document -> body 포함 전체를 뜻함 .querySelector 선택자 뜻함
+        console.log(clickBtn);
+        //클릭횟수 담기
+        let counter = document.querySelector(".counter")
+        console.log(counter);
+        // 0을 담는다
+        let count = 0;
+        //null 은 아무것도 없는 상태 ->class명이 다를때 null로 나옴 class명 복사해서 쓰기(오타주의)
+        clickBtn.addEventListener("click" , function(){
+          //  console.log("클릭완료");
+           //  console.log("count");
+         count++
+         //console.log(count); // 표시는 안 보이지만 클릭했을때 나타남
+         counter.textContent = `클릭횟수 : ${count}` //  textContent -> <p>태그 counter 안에 텍스트를 의미함
+
+
+        }) 
+        // clickBtn라는 함수에 addEventListener 이벤트를 줘라 
+        // ""안에  "이벤트명" , function(){}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@import url("reset.css");
+body {
+  background: url(../images/bg0.jpg) no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-size: 72px;
+}
+h2 {
+  display: none;
+}
+h3 {
+  display: none;
+}
+h4 {
+  display: none;
+}
+
+.box {
+  /* width: 300px; 1200px로 지정 1920px 쓰지말것*/
+  width: 80%;
+  max-width: 1000px; 
+  min-width: 290px;
+  height: 300px;
+  margin: auto;
+  background: rgb(255, 233, 161);
+}
+
+/* 반응형 */
+/* 너비가 1200px 일때 */
+@media (max-width: 1200px) {
+  body {
+    background: url(../images/bg0.jpg) no-repeat;
+  }
+  h1 {
+    font-size: 48px;
+    color: red;
+  }
+}
+
+/* 1000px */
+@media (max-width: 1000px) {
+  body {
+    background: url(../images/bg1.jpg) no-repeat;
+  }
+}
+
+/* 768px 테블릿*/
+@media (max-width: 768px) {
+  body {
+    background: url(../images/bg2.jpg) no-repeat;
+  }
+  /* h2 보이게 */
+  h1 {
+    display: none;
+  }
+  h2 {
+    display: block;
+  }
+  h3 {
+    display: none;
+  }
+}
+
+/* 390px 모바일*/
+@media (max-width: 390px) {
+  body {
+    background: url(../images/bg3.jpg) no-repeat;
+  }
+  h1 {
+    display: none;
+    font-size: 24px;
+  }
+  h2 {
+    display: none;
+  }
+  h3 {
+    display: block;
+  }
+  h4 {
+    display: block;
+  }
+}
