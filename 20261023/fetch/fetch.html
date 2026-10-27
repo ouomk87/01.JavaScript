@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="display">
+      <!-- js출력 -->
+    </div>
+    <script>
+      // fetch()
+      // 일반적으로 서버에서 데이터를 가져올때 사용
+      //API요청이나 로컬 JSON 파일 읽는데도 활용
+      // 기본형식
+      //then(Response) 서버가 보내준 응답을 받는다.
+      //then(date) 변환이 끝난 실제 데이터를 화면에 출력하는 공간
+      //catch() 요청이나 데이터나 처리 과정에서 오류가 발생 했을때 처리하는 메서드
+      //fetch("주소").then(Response).then(date).catch(error);
+      // http 상태 코드
+      // 200 - 서버가 요청을 정상적으로 처리
+      // 300 - 요청한 주소에서 다른 주소로 이동해야 하거나 이동이 발생했다!
+      // 400 - 요청에 문제가 있다.
+      // 500 - 서버에 문제가 발생
+      fetch("date.json")
+        .then((Response) => {
+          // console.log(Response);
+          return Response.json(); //응답 데이터를 자바스크립트에서 사용 할수 있게 변환해줌
+        }) //{}객체 없이 쓸경우  return안써도 된다.  Response.json() 요렇게 쓴다!
+        .then((date) => {
+          //console.log(date);
+          const displayEl = document.querySelector("#display");
+          displayEl.innerHTML = `
+          <p>이름:${date.name}</p>
+       <p>나이:${date.age}</p>
+       <p>도시:${date.city}</p>
+          `;
+        })
+        .catch((error) => {
+          console.log("오류발생", error);
+        });
+    </script>
+  </body>
+</html>

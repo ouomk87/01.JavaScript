@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none; /*일단닫기*/
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        position: relative;
+        background-color: #fff;
+        width: 300px;
+        padding: 30px;
+        border-radius: 20px;
+      }
+      /*닫기*/
+      .closeBtn {
+        position: absolute;
+        top: -26px;
+        right: 16px;
+        cursor: pointer;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!--모달창-->
+    <!--모달 열기 버튼-->
+    <button class="openBtn">모달열기</button>
+    <!--모달창-->
+    <div class="modal">
+      <!--모달창 내용-->
+      <div class="modal-content">
+        <span class="closeBtn">X</span>
+        <h2>모달창</h2>
+        <p>ffffffffffffffffffffffffffffffffffffffff</p>
+      </div>
+    </div>
+    <script>
+      const openBtn = document.querySelector(".openBtn");
+      const modal = document.querySelector(".modal");
+      const closeBtn = document.querySelector(".closeBtn");
+      //모달열기
+      openBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+      });
+      //모달닫기
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+      //배경 클릭시 모달 닫기
+      modal.addEventListener("click", (e) => {
+        console.log(e.target); //콘솔로 확인해 보면 target이 modal을 나타내고 있음 = 내자신
+        //e.target.style.display = "none"; // 그래서 modal(내자신)을 none으로 바꾸면 됨 그런데 modal-content흰배경부분도 꺼지기 때문에 이거는 안꺼지게 하기 위해 밑에걸로 적용함
+        if (e.target === modal) {
+          e.target.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

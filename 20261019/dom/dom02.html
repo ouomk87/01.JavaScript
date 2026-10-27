@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--웹요소의 내용수정--->
+    <button onclick="innerTxt()">innerRext로 표시하기</button
+    ><!--innerTxt() 본인이 만드는 함수임-->
+    <button onclick="innerHm()">innerHTML로 표시하기</button>
+    <h1>현재 시각 :</h1>
+    <div id="current">
+      <!--js출력-->
+    </div>
+    <script>
+      //const current = document.querySelector("#current") 1번째 방법
+      const current = document.getElementById("current"); //2번째 방법 ,getElementById 자체가 id값을 가져오니까 #을 안 붙여도됨
+      //요소명.innerText = 내용
+      //요소명.innerHTML = 내용 -> 둘다 결과 물은 같지만 innerHTML은 태그까지 넣을수있음
+      const now = new Date();
+      console.log(now);
+      //함수 기능
+      //innerTxt()함수
+      function innerTxt() {
+        //실행코드가 들어간다
+        // console.log("확인");
+        //current.innerText = now;
+        current.innerText = now //<strong>Mon Oct 19 2026 10:45:43 GMT+0900 (한국 표준시)</strong>
+      }
+      function innerHm() {
+        //current.innerHTML = now;
+        current.innerHTML = `<strong>${now}</strong>`; //Mon Oct 19 2026 10:46:56 GMT+0900 (한국 표준시)
+      }
+
+      //innerText는 글자만 출력(만약에 태그넣으면 태그가 적용되서 나오지않고 글자 그래도 나옴)
+      //innerHTML는 태그까지 출력가능!!
+    </script>
+  </body>
+</html>

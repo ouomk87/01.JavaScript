@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--속성 가져오거나 수정하기 메서드-->
+    <a href="http://www.naver.com">네이버</a>
+    <script>
+      //태그 속성가져오는 메서드
+      //기본형 getAtteibute("가져올속성명")
+      const aEl = document.querySelector("a");
+      //console.log(aEl);
+      const hrefE = aEl.getAttribute("href");
+      console.log(hrefE);
+      //속성을 수정하는 메서드
+      //기본형 : setAtturibute("속성명", "바꿀 값"); 가지고 와서 세팅해라~
+      aEl.setAttribute("href", "http://www.google.com");
+      console.log(aEl);
+      aEl.innerText = "구글";
+      aEl.setAttribute("target", "_blank"); //추가 가능
+      aEl.setAttribute("title", "구글로 이동"); //추가 가능
+      aEl.setAttribute("class", "link"); //추가 가능
+      aEl.setAttribute("id", "id"); //추가 가능
+    </script>
+  </body>
+</html>

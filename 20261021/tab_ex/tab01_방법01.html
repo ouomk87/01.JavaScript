@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탭기능</title>
+    <style>
+      .tab-btn {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #40c0fc;
+        background-color: aquamarine;
+        width: 30%;
+      }
+      .tab-btn.active {
+        border-color: rgb(226, 95, 123);
+        background-color: antiquewhite;
+      }
+      .tab-content {
+        width: 90%;
+        border: 1px solid #ccc;
+        padding: 15px;
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 탭버튼 -->
+    <button class="tab-btn active">탭01</button>
+    <button class="tab-btn">탭02</button>
+    <button class="tab-btn">탭03</button>
+    <!-- 탭내용 -->
+    <div class="tab-content active">탭내용 1</div>
+    <div class="tab-content">탭내용 2</div>
+    <div class="tab-content">탭내용 3</div>
+
+    <script>
+      //배열을 하나하나씩 꺼내기. 하나하나에 접근할라면 매개 넣기
+      const tabs = document.querySelectorAll(".tab-btn");
+      const contents = document.querySelectorAll(".tab-content");
+      console.log(contents[2]); //index번호로 넣고 싶으면 [번호] 1->2번, 2->3번
+
+      console.log(tabs); //NodeList 배열 형식으로 들어가있음
+      tabs.forEach((tab, index) => {
+        //console.log(tab, index);
+
+        tab.addEventListener("click", () => {
+          //모든버튼 활설화 초기화 시키기 = active 초기화
+          tabs.forEach((t) => {
+            console.log(t);
+            t.classList.remove("active");
+          });
+          //내용 활성화 초기화
+          contents.forEach((c) => {
+            c.classList.remove("active");
+          });
+          //해당하는 탭 활성화
+          tab.classList.add("active");
+          //해당하는 내용 활성화
+          //contents[index];
+          //console.log(index); //0
+
+          // console.log(contents[index]); //contents[0] -> 내용1
+
+          contents[index].classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

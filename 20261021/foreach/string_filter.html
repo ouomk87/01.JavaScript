@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품검색</title>
+  </head>
+  <body>
+    <h2>상품검색</h2>
+    <!-- 검색창 -->
+    <input id="search" placeholder="상품이름을 입력하세요">
+    <!-- 검색 결과 -->
+     <ul id="productList">
+        <!-- js -->
+         
+     </ul>
+     <script>//상품데이터
+        const producrs=["티셔츠", "청바지", "운동화","모자", "원피스"]
+        const search = document.querySelector("#search")
+        const producrList = document.querySelector("#productList")
+        //상품 출력 함수
+        function showProductList(item){
+            producrList.innerHTML =""
+            //console.log(item);
+            item.forEach((product)=>{
+                console.log(product);
+                productList.innerHTML += `<li>${product}</li>`
+
+            })
+            
+
+        }
+        //입력창에 입력하면
+        search.addEventListener("input", ()=>{
+            const keyword =search.value; //value=값. 사용자가 입력하는 값
+            console.log(keyword);
+            //글자가 포함된 상품만 찾기 
+            const result =producrs.filter((product)=>{console.log(product);
+            return product.includes(keyword)//includes-> 상품이 있는지 없는지 확인하는것
+
+            })
+            console.log(result);
+            //검색 결과 출력
+           showProductList(result)
+           
+           
+            
+        })// 입력창에 입력하는 이벤트는 input
+        showProductList(producrs)//그냥 보이고만싶을때
+     </script>
+
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .todo {
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .todo.completed {
+        color: gray;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>오늘 할일</h2>
+    <ul>
+      <li class="todo"><input type="checkbox" />청소하기</li>
+      <li class="todo"><input type="checkbox" />장보기</li>
+      <li class="todo"><input type="checkbox" />운동하기</li>
+      <li class="todo"><input type="checkbox" />자바스크립트 복습하기</li>
+    </ul>
+    <script>
+      const todos = document.querySelectorAll(".todo"); // 같은 class를 다 선택하겠다는 All을 붙임
+      console.log(todos); // 결과물을 보면 배열처럼 담기지만 배열을 아님 , NodeList로 담긴다
+      todos.forEach((todo, index) => {
+        //여러개가 있는걸 하나씩 꺼내쓰기위해 forEach 씀
+        //console.log(todo, index);
+        const checkBox = todo.querySelector("input");
+        //console.log(checkBox); //checkBox도 각각 나눠담음
+        checkBox.addEventListener("change", () => {
+          //addEventListener에 "change" 넣는 이유는 check 된걸로 change 된다~ 라는 의미
+          console.log(checkBox.checked); //checkBox에 checked가 됐는지 확인
+          if (checkBox.checked) {
+            todo.classList.add("completed");
+          } else {
+            todo.classList.remove("completed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach() map() filter() 상품 관리</title>
+    <style>
+      button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #333;
+        color: #fff;
+      }
+      .product-list {
+        width: 90%;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /*1fr 1:1 같은 비율로*/
+
+        gap: 12px;
+      }
+      .product {
+        background-color: antiquewhite;
+      }
+      @media (max-width: 390px) {
+        .product-list {
+          grid-template-columns: 1fr; /*100%*/
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>온라인 쇼핑몰</h1>
+    <button id="allBtn">전체 상품</button>
+    <button id="saleBtn">할인 가격보기</button>
+    <button id="filterBtn">5만원 이하</button>
+    <p id="count">
+      <!-- js출력 -->
+    </p>
+    <div id="productList" class="product-list">
+      <!-- js출력 -->
+    </div>
+    <script>
+      //상품데이터
+      const products = [
+        { id: 1, name: "티셔츠", price: 20000, category: "의류" },
+        { id: 2, name: "청바지", price: 45000, category: "의류" },
+        { id: 3, name: "운동화", price: 80000, category: "신발" },
+        { id: 4, name: "모자", price: 15000, category: "잡화" },
+      ];
+      //html 요소 가져오기
+      const productList = document.querySelector("#productList"); //js출력
+      const count = document.querySelector("#count"); //js출력
+      const allBtn = document.querySelector("#allBtn"); //전체상품
+      const saleBtn = document.querySelector("#saleBtn"); //할인 가격보기
+      const filterBtn = document.querySelector("#filterBtn"); //5만원 이하
+      //상품을 화면에 출력하는 공통함수
+      function renderProducts(items) {
+        // items 배경
+        console.log("상품확인");
+        console.log(items);
+        items.forEach((product) => {
+          //하나씩 나오게 하기위해 forEach
+          //console.log(product);
+          productList.innerHTML += `
+          <div class="product">
+                <h3>${product.name}</h3>
+                <p>분류 : ${product.category}</p>
+                <p class="price">${product.price.toLocaleString()}원</p>
+            </div>
+
+          `;
+        });
+      }
+      //map()모든 상품 가격을 10% 할인한 새 배열  공통 함수
+      function showSaleProducts() {
+        //console.log("할인확인");
+        const saleProduct = products.map((product) => {
+          console.log(product); //출력할때 forEach처럼 map을써도 됨. 그대신 금액을 변화를 주고싶을때 map씀
+          return {
+            ...product, //... <-- 복사해서 쓰겠다. ...을 안쓰면 밑에처럼 다 써야함
+            // id 생략
+            // name: product.name,
+            // price: product.price,
+            // category: product.category,
+            price: product.price * 0.9, //금액만 바껴서 출력하겠다.
+          };
+        });
+        console.log(saleProduct); //배열안에서 금액만 바꿈
+        renderProducts(saleProduct);
+      }
+      //renderProducts();
+      //forEach() 사용 상품 출력
+      allBtn.addEventListener("click", () => {
+        renderProducts(product);
+      });
+      //map()할인적용
+      saleBtn.addEventListener("click", showSaleProducts);
+
+      //forEach -> 있는 그대로 배열할때 //map -> 배열에 변화를 주고싶을때
+    </script>
+  </body>
+</html>

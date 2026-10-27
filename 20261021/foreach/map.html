@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map()</title>
+  </head>
+  <body>
+    <!-- map()기존 데이터를 하나씩 꺼내서 다른 데이터로 바꾸고, 새로운 배열을 만드는 메서드 -->
+    <script>
+      const prices = [1000, 2000, 3000];
+      console.log(prices);
+      const newPrices = prices.map((price) => {
+        console.log(price);
+        //결과를 반환하는  return이 있어야함
+        return price + 1000;
+      });
+      //돌려 받은 값들을  모아서 새 배열로 만든다.
+      console.log(newPrices); //[2000,3000,4000]
+      const numers = [1, 2, 3, 4];
+      //   const result = numers.map((num) => {
+      //     console.log(num);
+      //     return num * 2;
+      //   });
+      const result = numers.map((num) => num * 2);
+      //{}객체를 쓰지않을때는 return 쓰지 않아도 된다. 어떤경우 쓰냐면 짧을때 사용
+      console.log(result); //[1,2,3,4]
+    </script>
+  </body>
+</html>
+ 
